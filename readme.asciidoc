@@ -1,0 +1,23 @@
+Bu paket iterator tasarım deseni ile ilgili sunum dosyası, iterator tasarım desenine 2 farklı senaryo için yazılan python kodlarını içermektedir.
+
+Iterator tasarım deseni 2 senaryo üzerinden örneklenmiştir.
+
+####ÖRNEK SENARYO-1
+####MÜZİK ALBÜMÜ KOLEKSİYONU
+
+Bu diyagramda, AlbumKoleksiyonu ve AlbumIterator arayüzleri ile onların somut uygulamaları olan ConcreteAlbumKoleksiyonu ve ConcreteAlbumIterator sınıfları gösterilmektedir. Album sınıfı ise, müzik albümü nesnelerini temsil etmektedir.
+AlbumKoleksiyonu arayüzü, bir AlbumIterator nesnesi oluşturmak için createIterator() yöntemini tanımlar. AlbumIterator arayüzü ise, hasNext() ve next() yöntemlerini tanımlar. Bu yöntemler, albüm koleksiyonu üzerinde gezinmeyi ve albümleri işlemeyi sağlar.
+ConcreteAlbumKoleksiyonu sınıfı, AlbumKoleksiyonu arayüzünü uygular ve createIterator() yöntemini gerçekler. Ayrıca, albüm koleksiyonuna yeni albümler eklemek için ekleAlbum() yöntemine sahiptir. ConcreteAlbumIterator sınıfı ise, AlbumIterator arayüzünü uygular ve hasNext() ve next() yöntemlerini gerçekler. Bu sınıflar, albüm koleksiyonu üzerinde gezinmeyi ve işlemeyi sağlayan somut uygulamalardır.
+ConcreteAlbumKoleksiyonu ve Album sınıfları arasında bir ilişki tanımlanmıştır. İlişki şu şekildedir: Bir ConcreteAlbumKoleksiyonu nesnesi, sıfır veya daha fazla Album nesnesine sahip olabilir. Bu, albümlerin albüm koleksiyonuna ait olduğunu gösterir.
+
+
+####ÖRNEK SENARYO-2
+####RESTORAN MENÜSÜ
+
+Bu senaryoda bir restoran menüsü örneği üzerinden iterator tasarım deseni örneklendirilmiştir. 
+
+Menüde bulunan yemeklerin türlerine göre (örneğin: aperatif, ana yemek, tatlı) filtreleyerek farklı iteratorlar ile gezinebiliriz.
+
+Bu UML diyagramında, MenuItem sınıfı menüdeki her bir yemeği temsil eder ve vegan ve vejetaryen özelliklerini saklar. Menu sınıfı, menü öğelerini saklar ve belirli bir öğün türüne veya diyet türüne göre menü öğelerini döndüren metodlar sunar.
+MenuIterator sınıfı, menü öğelerini döndürmek için iterator arayüzünü sağlar. MealTypeIterator sınıfı, belirli bir öğün türü için menü öğelerini döndüren bir iterator sağlar. DietaryIterator sınıfı, belirli bir diyet türü (vegan veya vejetaryen) için menü öğelerini döndüren bir iterator sağlar.
+Bu yapıda, iterator'lar menü koleksiyonundan alınan verilere dayalı olarak çalışır ve doğrudan menü koleksiyonuna erişmez. İterator'ların bağımsızlığı artırılır ve menü öğelerinin farklı özelliklere göre filtrelenmesi daha kolay hale gelir.
